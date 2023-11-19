@@ -19,5 +19,3 @@ Route::prefix('facundo')->group(function(){
     Route::get('/signin/{v1}/{v2}/{v3}/{v4}', [FirstController::class, 'signin']);
     Route::get('/signup/{v1}/{v2}/{v3}', [FirstController::class, 'signup']);
 });
-
-// parametros => Route::get('/usuarios/{id}', function ($id) { return "Mostrando perfil del usuario: ".$id; }

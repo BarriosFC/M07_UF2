@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P1 Barrios Facundo</title>
+    <title>SignUp</title>
 </head>
 <body>
+    <h1>{{ $v1 }} {{ $v2 }} {{ $v3 }}</h1>
     <form method="POST" action="">
         <div>
             <label>Nombre:</label><br>
@@ -39,6 +40,6 @@
         </div>
         <input type="submit" name="send" value="Enviar">
     </form>
-    <a href="signin">Log In</a>
+    <a href="/facundo/signin">Log In</a>
 </body>
 </html>
