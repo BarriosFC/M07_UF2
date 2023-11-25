@@ -6,19 +6,17 @@
     <title>SignIn</title>
 </head>
 <body>
-    <h1>{{ $v1 }} {{ $v2 }} {{ $v3 }} {{ $v4 }}</h1>
-    <form action="" method="post">
+    <h1>Inicie Sesión</h1>
+    <form action=" {{ route('login') }} " method="post">
         <label for="email">Email: </label>
         <input type="text" name="email"><br>
 
         <label for="password">Contraseña: </label>
         <input type="text" name="password"><br>
 
-        <label for="rememberme">Recuerdame</label>
-        <input type="checkbox" name="rememberme"><br>
-
-        <input type="submit" name="send" value="Enviar">
+        <input type="submit" name="send" value="Sign In">
+        <small style="color: red;">{{ $error }}</small>
     </form>
-    <a href="/facundo/signup">Crear Usuario Nuevo</a>
+    <a href=" {{ route('signup') }} ">Crear Usuario Nuevo</a>
 </body>
 </html>
