@@ -58,7 +58,7 @@ class ProfessoratController extends Controller
     public function edit(Professorat $professorat)
     {
         // redireccion a formulario + datos
-        $profe = User::find($professorat['id']);
+        $profe = Professorat::find($professorat['id']);
         return view('form_professorat')->with(['metodo' => 'Editar', 'profe' => $profe]);
     }
 
@@ -68,7 +68,7 @@ class ProfessoratController extends Controller
     public function update(Request $request, Professorat $professorat)
     {
         // guardar el formulario
-        $profe = User::find($professorat['id']);
+        $profe = Professorat::find($professorat['id']);
         $profe->name = $request->input('name');
         $profe->surname = $request->input('surname');
         $profe->email = $request->input('email');

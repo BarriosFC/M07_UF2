@@ -14,6 +14,7 @@
             <th>SURNAME</th>
             <th>ROL</th>
             <th>EMAIL</th>
+            <th>Acciones</th>
         </tr>
 
         @foreach ($profes as $sensei)
@@ -23,6 +24,10 @@
             <td>{{ $sensei['surname'] }}</td>
             <td>{{ $sensei['rol'] }}</td>
             <td>{{ $sensei['email'] }}</td>
+            <td>
+                <a href="{{ route('p_edit') }}/{{ $sensei['id'] }}">Editar</a>
+                <a href="">Eliminar</a>
+            </td>
         </tr>
         @endforeach
     </table>
