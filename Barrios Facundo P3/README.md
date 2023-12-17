@@ -1,5 +1,8 @@
-# Práctica 3
-## PREPARACIÓ BBDD
-### by Facundo "Shining Armor" Barrios
+# Práctica 4
+## CRUD con LARAVEL
+### Hola somos el grupo 7 y vamos a exponer sobre la mitocondria
+### Barrios Facundo / Bravo Neus / Montenegro Angelo 
 
-[Enlace](https://drive.google.com/file/d/1AfsThsMxIz8tuujE_VC7x5ZEZMfecGCe/view?usp=sharing) al video demostración
+A. 
+B. 
+C. Professorat: [Enlace](https://drive.google.com/file/d/1XzWNINSvzqoNpwbGSAuItsWhLrf6MaOO/view?usp=sharing) al video demostración 
