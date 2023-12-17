@@ -15,7 +15,7 @@ class ProfessoratController extends Controller
     {
         // es un display all
         $profes = Professorat::all();
-        return view("professorat")->with("profes", $profes);
+        return view("Professorat.list_professorat")->with("profes", $profes);
     }
 
     /**
@@ -25,7 +25,8 @@ class ProfessoratController extends Controller
     {
         // redireccion a la view de creacion
         $profe = ['name' => '', 'surname' => '', 'email' => ''];
-        return view('form_professorat')->with(['metodo' => 'Añadir', 'profe' => $profe]);
+        return view('Professorat.create_professorat')
+            ->with(['profe' => $profe]);
     }
 
     /**
@@ -41,47 +42,56 @@ class ProfessoratController extends Controller
 
         $professorat->save();
 
-        return view("professorat");
+        return redirect()->route("professorat");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Professorat $professorat)
+    public function show(Request $request)
     {
         // mostrar o seleccionar? un solo resultado
+        $profe = Professorat::find($request['id']);
+        
+        return view('Professorat.show_professorat')
+            ->with(['profe' => $profe]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Professorat $professorat)
+    public function edit($id)
     {
         // redireccion a formulario + datos
-        $profe = Professorat::find($professorat['id']);
-        return view('form_professorat')->with(['metodo' => 'Editar', 'profe' => $profe]);
+        $profe = Professorat::find($id);
+        return view('Professorat.edit_professorat')
+            ->with(['profe' => $profe]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Professorat $professorat)
+    public function update(Request $request, $id)
     {
         // guardar el formulario
-        $profe = Professorat::find($professorat['id']);
+        $profe = Professorat::find($id);
         $profe->name = $request->input('name');
         $profe->surname = $request->input('surname');
         $profe->email = $request->input('email');
+        $profe->update($request->all());
 
-        $professorat->save();
-        return view("professorat");
+        return redirect()->route("professorat");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Professorat $professorat)
+    public function destroy($id)
     {
         // eliminar
+        $profe = Professorat::find($id);
+        $profe->delete();
+
+        return redirect()->route("professorat");
     }
 }

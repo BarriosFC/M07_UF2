@@ -16,8 +16,8 @@ use App\Http\Controllers\Admin\ProfessoratController;
         Route::get('/p_store', [ProfessoratController::class, 'store'])->name('p_store');
         Route::get('/p_show_by_id', [ProfessoratController::class, 'show'])->name('p_show_by_id');
         Route::get('/p_edit/{id}', [ProfessoratController::class, 'edit'])->name('p_edit');
-        Route::post('/p_update', [ProfessoratController::class, 'update'])->name('p_update');
-        Route::get('/p_destroy', [ProfessoratController::class, 'destroy'])->name('p_destroy');
+        Route::get('/p_update/{id}', [ProfessoratController::class, 'update'])->name('p_update');
+        Route::get('/p_destroy/{id}', [ProfessoratController::class, 'destroy'])->name('p_destroy');
     });
 
     
