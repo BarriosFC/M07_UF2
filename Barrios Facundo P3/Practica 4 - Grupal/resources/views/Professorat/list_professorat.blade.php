@@ -12,8 +12,8 @@
             <th>ID</th>
             <th>NAME</th>
             <th>SURNAME</th>
-            <th>ROL</th>
             <th>EMAIL</th>
+            <th>Acciones</th>
         </tr>
 
         @foreach ($profes as $sensei)
@@ -21,11 +21,20 @@
             <td>{{ $sensei['id'] }}</td>
             <td>{{ $sensei['name'] }}</td>
             <td>{{ $sensei['surname'] }}</td>
-            <td>{{ $sensei['rol'] }}</td>
             <td>{{ $sensei['email'] }}</td>
+            <td>
+                <a href="{{ route('p_edit', $sensei['id']) }}">Editar</a>
+                <a href="{{ route('p_destroy', $sensei['id']) }}">Eliminar</a>
+            </td>
         </tr>
         @endforeach
     </table>
-    <a href=" {{ route('admin') }} ">ADMIN VIEW</a>
+    <a href=" {{ route('admin') }} ">Admin View</a>
+    <a href=" {{ route('p_create') }} ">Añadir un Profesor</a><br/>
+    <form action=" {{ route('p_show_by_id') }} ">
+        <input type="text" name="id" placeholder="Buscar un profesor por ID...">
+        <button type="submit">Buscar</button>
+    </form>
+    
 </body>
 </html>
