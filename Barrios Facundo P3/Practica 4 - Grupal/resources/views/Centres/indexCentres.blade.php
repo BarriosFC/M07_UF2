@@ -30,9 +30,12 @@
         </tr>
         @endforeach
     </table>
-
+    <form action=" {{ route('showCentre') }} ">
+        <input type="text" name="id" placeholder="Busca un centro por su ID...">
+        <button type="submit">Buscar</button>
+    </form>
+    
     <a href=" {{ route('admin') }} ">ADMIN VIEW</a>
     <a href=" {{ route('createCentre') }} ">Añadir centro</a>
-
 </body>
 </html>

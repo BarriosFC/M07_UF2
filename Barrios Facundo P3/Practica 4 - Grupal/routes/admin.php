@@ -29,7 +29,7 @@ use App\Http\Controllers\Admin\ProfessoratController;
 
         Route::get('/centres', [CentresController::class, 'index'])->name('centres');
         Route::get('/c_create', [CentresController::class, 'create'])->name('createCentre');
-        Route::get('/c_store', [CentresController::class, 'store'])->name('storeCentre');
+        Route::post('/c_store', [CentresController::class, 'store'])->name('storeCentre');
         Route::get('/c_show', [CentresController::class, 'show'])->name('showCentre');
         Route::get('/c_edit/{id}', [CentresController::class, 'edit'])->name('editCentre');
         Route::get('/c_update/{id}', [CentresController::class, 'update'])->name('updateCentre');

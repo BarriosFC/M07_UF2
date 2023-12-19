@@ -37,7 +37,7 @@ class CentresController extends Controller
         $centre->cp = $request->input('cp');
         $centre->city = $request->input('city');
 
-        $centro->save();
+        $centre->save();
         return redirect()->route("centres");
         
     }
