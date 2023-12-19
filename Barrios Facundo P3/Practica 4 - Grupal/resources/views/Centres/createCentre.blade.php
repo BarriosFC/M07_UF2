@@ -7,7 +7,8 @@
 </head>
 <body>
     <h1>Añade un nuevo centro</h1>
-    <form method="POST" action=" {{ route('storeCentro') }} ">
+    <form method="POST" action=" {{ route('storeCentre') }} ">
+        @csrf
         <div>
             <label>Name</label><br>
             <input type="text" name="name">

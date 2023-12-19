@@ -18,10 +18,10 @@ class CentreFactory extends Factory
     {
         return [
             //
-            'name' => fake()->text(30),
-            'address' => fake()->text(50),
-            'cp' => fake()->numberBetween(8001, 8035),
-            'city' => fake()->name(15)
+            'name' => fake()->name(),
+            'address' => fake()->address(),
+            'cp' => fake()->cp(),
+            'city' => fake()->city()
         ];
     }
 }

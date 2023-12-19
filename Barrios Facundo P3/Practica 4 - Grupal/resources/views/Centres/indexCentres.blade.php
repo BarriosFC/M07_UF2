@@ -23,15 +23,16 @@
             <td>{{ $centro['address'] }}</td>
             <td>{{ $centro['cp'] }}</td>
             <td>{{ $centro['city'] }}</td>
-            <td><a href=" {{ route('admin') }} ">Delete</a></td>
-            <td><a href=" {{ route('admin') }} ">Edit</a></td>
-
+            <td>
+                <a href="{{ route('editCentre', $centro['id']) }}">Editar</a>
+                <a href="{{ route('destroyCentre', $centro['id']) }}">Eliminar</a>
+            </td>
         </tr>
         @endforeach
     </table>
 
     <a href=" {{ route('admin') }} ">ADMIN VIEW</a>
-    <a href=" {{ route('admin') }} ">Añadir centro</a>
+    <a href=" {{ route('createCentre') }} ">Añadir centro</a>
 
 </body>
 </html>

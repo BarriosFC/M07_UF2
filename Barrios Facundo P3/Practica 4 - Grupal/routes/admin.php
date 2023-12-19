@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\CentresController;
+use App\Http\Controllers\Admin\CentresController;
 use App\Http\Controllers\Admin\AlumnatController;//ruta de acceso al controlado de los alumnos 
 use App\Http\Controllers\Admin\ProfessoratController;
 

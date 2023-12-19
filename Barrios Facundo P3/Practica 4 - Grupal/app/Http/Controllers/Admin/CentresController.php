@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Centre;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CentresController extends Controller
 {
@@ -14,7 +14,7 @@ class CentresController extends Controller
     public function index() {
         // Accedemos a todos los registros de la base de datos y los mostramos en la vista de Centros de la carpeta Centres
         $centros = Centre::all();
-        return view('Centres.centres')->with('centros', $centros);
+        return view('Centres.indexCentres')->with('centros', $centros);
     }
 
     /**
@@ -38,7 +38,7 @@ class CentresController extends Controller
         $centre->city = $request->input('city');
 
         $centro->save();
-        return redirect()->route("indexCentres");
+        return redirect()->route("centres");
         
     }
 
@@ -78,17 +78,18 @@ class CentresController extends Controller
 
         $centre->update($request->all());
 
-        return redirect()->route("indexCentre");
+        return redirect()->route("centres");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Centre $centre)
+    public function destroy($id)
     {
-        // Elimina el centro pasado por parametro
-        $centre->delete();// 
-        return redirect()->route('indexCentre'); 
+        // Elimina el centro pasado por parametro id
+        $centre = Centre::find($id);
+        $centre->delete();
+        return redirect()->route("centres");
 
     }
 }
